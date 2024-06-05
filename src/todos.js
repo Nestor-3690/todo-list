@@ -1,6 +1,7 @@
 function Todos() {
     class Todo {
-        constructor(title, description, dueDate, priority) {
+        constructor(project, title, description, dueDate, priority) {
+            this.id = project.todos.length,
             this.title = title,
             this.description = description,
             this.dueDate = dueDate,
