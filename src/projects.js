@@ -12,11 +12,7 @@ function Projects() {
     const appendProject = (project) => projects.push(project);
 
     const removeProject = (id) => {
-        for (project of projects) {
-            if (project.id === id) {
-                projects.splice(id, 1);
-            }
-        }
+        projects.splice(id, 1);
     }
 
     return { Project, appendProject, removeProject };
