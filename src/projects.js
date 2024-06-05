@@ -10,4 +10,12 @@ function Projects() {
     }
 
     const appendProject = (project) => projects.push(project);
+
+    const removeProject = (id) => {
+        for (project of projects) {
+            if (project.id === id) {
+                projects.slice(id, 1);
+            }
+        }
+    }
 }
