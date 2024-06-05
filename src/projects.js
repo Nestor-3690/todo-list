@@ -18,4 +18,8 @@ function Projects() {
             }
         }
     }
+
+    return { Project, appendProject, removeProject };
 }
+
+export { Projects };
