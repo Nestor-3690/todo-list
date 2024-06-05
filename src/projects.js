@@ -1,21 +1,22 @@
 function Projects() {
     const projects = [];
 
-    class Project {
-        constructor(title) {
-            this.id = projects.length
-            this.title = title,
-            this.todos = [];
-        }
-    }
-
     const appendProject = (project) => projects.push(project);
 
     const removeProject = (id) => {
         projects.splice(id, 1);
     }
 
-    return { Project, appendProject, removeProject };
+    const removeTodo = (projectId, id) => {
+        for (project of projects) {
+            if (project.id === projectId) {
+                project.todos.splice(id, 1);
+                return;
+            }
+        }
+    }
+
+    return { appendProject, removeProject, removeTodo };
 }
 
 export { Projects };
