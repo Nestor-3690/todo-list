@@ -8,4 +8,6 @@ function Projects() {
             this.todos = [];
         }
     }
+
+    const appendProject = (project) => projects.push(project);
 }
