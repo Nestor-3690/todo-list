@@ -8,5 +8,9 @@ function Todos() {
             this.priority = priority,
             this.isDone = false;
         }
+
+        changeDone() {
+            this.isDone = true ? false : true;
+        }
     }
 }
