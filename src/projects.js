@@ -14,7 +14,7 @@ function Projects() {
     const removeProject = (id) => {
         for (project of projects) {
             if (project.id === id) {
-                projects.slice(id, 1);
+                projects.splice(id, 1);
             }
         }
     }
