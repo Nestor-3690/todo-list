@@ -1,4 +1,4 @@
-function List() {
+const list = (function List() {
     const projects = [];
 
     const getProjects = () => projects;
@@ -21,7 +21,7 @@ function List() {
         projects[projectId].todos.splice(id, 1);
     }
 
-    return { projects, getProjects, appendProject, removeProject, appendTodo, removeTodo };
-}
+    return { projects, getProjects, appendProject, getProjectLength, removeProject, appendTodo, removeTodo };
+})();
 
-export { List };
+export { list };
