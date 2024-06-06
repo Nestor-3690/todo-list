@@ -1,4 +1,4 @@
-function Projects() {
+function List() {
     const projects = [];
 
     const appendProject = (project) => projects.push(project);
@@ -19,4 +19,4 @@ function Projects() {
     return { appendProject, removeProject, removeTodo };
 }
 
-export { Projects };
+export { List };
