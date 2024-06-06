@@ -9,6 +9,6 @@ export class Todo {
     }
 
     changeDone() {
-        this.isDone = true ? false : true;
+        this.isDone = true ? !this.isDone : this.isDone;
     }
 }
