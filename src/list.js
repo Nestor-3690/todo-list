@@ -3,6 +3,14 @@ function List() {
 
     const appendProject = (project) => projects.push(project);
 
+    const getProjectLength = (projectId) => {
+        for (project in projects) {
+            if (project.id === projectId) {
+                return project.todos.length;
+            }
+        }
+    }
+
     const removeProject = (id) => {
         projects.splice(id, 1);
     }
