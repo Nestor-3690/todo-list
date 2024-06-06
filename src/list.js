@@ -1,6 +1,8 @@
 function List() {
     const projects = [];
 
+    const getProjects = () => projects;
+
     const appendProject = (project) => projects.push(project);
 
     const getProjectLength = (projectId) => {
@@ -33,7 +35,7 @@ function List() {
         }
     }
 
-    return { appendProject, removeProject, appendTodo, removeTodo };
+    return { getProjects, appendProject, removeProject, appendTodo, removeTodo };
 }
 
 export { List };
