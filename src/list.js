@@ -6,11 +6,7 @@ function List() {
     const appendProject = (project) => projects.push(project);
 
     const getProjectLength = (projectId) => {
-        for (project in projects) {
-            if (project.id === projectId) {
-                return project.todos.length;
-            }
-        }
+        return projects[projectId].todos.length;
     }
 
     const removeProject = (id) => {
@@ -18,24 +14,14 @@ function List() {
     }
 
     const appendTodo = (todo, projectId) => {
-        for (project of projects) {
-            if (project.id === projectId) {
-                project.todos.push(todo);
-                return;
-            }
-        }
+        projects[projectId].todos.push(todo);
     }
 
     const removeTodo = (projectId, id) => {
-        for (project of projects) {
-            if (project.id === projectId) {
-                project.todos.splice(id, 1);
-                return;
-            }
-        }
+        projects[projectId].todos.splice(id, 1);
     }
 
-    return { getProjects, appendProject, removeProject, appendTodo, removeTodo };
+    return { projects, getProjects, appendProject, removeProject, appendTodo, removeTodo };
 }
 
 export { List };
