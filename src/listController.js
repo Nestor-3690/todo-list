@@ -2,9 +2,11 @@ import { list } from "./list";
 import { Project } from "./project";
 import { Todo } from "./todo";
 import { UpdateID } from "./updateID";
+import { Date } from "./date";
 
 function Controller() {
     const projects = list.projects;
+    const date = Date();
 
     const addProject = (title) => {
         if (!title) {
@@ -16,7 +18,8 @@ function Controller() {
     }
 
     const addTodo = (project, title, description, dueDate, priority) => {
-        if ((!project && project !== 0) || !title || !dueDate) {
+        if ((!project && project !== 0) || !title || !dueDate || !date.checkDate(dueDate)) {
+            console.log("Error");
             return false;
         } else {
             const todo = new Todo(projects[project], title, description, dueDate, priority);
