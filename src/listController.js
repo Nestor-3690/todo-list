@@ -32,6 +32,11 @@ function Controller() {
         update.projects(projects);
     }
 
+    const cleanTodo = (projectId, id) => {
+        list.removeTodo(projectId, id);
+        update.todos(projects, projectId);
+    }
+
     return { projects, addProject, addTodo, cleanProject, cleanTodo };
 }
 
