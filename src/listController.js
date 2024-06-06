@@ -7,6 +7,7 @@ import { Date } from "./date";
 function Controller() {
     const projects = list.projects;
     const date = Date();
+    const update = UpdateID();
 
     const addProject = (title) => {
         if (!title) {
@@ -19,7 +20,6 @@ function Controller() {
 
     const addTodo = (project, title, description, dueDate, priority) => {
         if ((!project && project !== 0) || !title || !dueDate || !date.checkDate(dueDate)) {
-            console.log("Error");
             return false;
         } else {
             const todo = new Todo(projects[project], title, description, dueDate, priority);
@@ -27,7 +27,14 @@ function Controller() {
         }
     };
 
-    const cleanProject = 0;
+    const cleanProject = (id) => {
+        if (!id && id !== 0) {
+            return false;
+        } else {
+            list.removeProject(id);
+            update.projects(projects);
+        }
+    }
 
     const cleanTodo = 0;
 
