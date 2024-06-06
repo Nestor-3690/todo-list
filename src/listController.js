@@ -37,7 +37,11 @@ function Controller() {
         update.todos(projects, projectId);
     }
 
-    return { projects, addProject, addTodo, cleanProject, cleanTodo };
+    const changeTodoStatus = (projectId, id) => {
+        projects[projectId].todos[id].changeDone();
+    }
+
+    return { projects, addProject, addTodo, cleanProject, cleanTodo, changeTodoStatus };
 }
 
 export { Controller };
