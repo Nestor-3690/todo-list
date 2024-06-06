@@ -7,6 +7,15 @@ function List() {
         projects.splice(id, 1);
     }
 
+    const appendTodo = (todo, projectId) => {
+        for (project of projects) {
+            if (project.id === projectId) {
+                project.todos.push(todo);
+                return;
+            }
+        }
+    }
+
     const removeTodo = (projectId, id) => {
         for (project of projects) {
             if (project.id === projectId) {
@@ -16,7 +25,7 @@ function List() {
         }
     }
 
-    return { appendProject, removeProject, removeTodo };
+    return { appendProject, removeProject, appendTodo, removeTodo };
 }
 
 export { List };
