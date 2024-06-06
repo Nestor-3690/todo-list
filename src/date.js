@@ -1,7 +1,7 @@
-import { isDate, isAfter } from "date-fns";
+import { isDate, isFuture } from "date-fns";
 
 function Date() {
-    const checkDate = (date) => isDate(date) && isAfter(date);
+    const checkDate = (date) => isDate(date) && isFuture(date);
 
     return { checkDate };
 }
