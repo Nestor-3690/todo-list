@@ -19,7 +19,7 @@ function Controller() {
     }
 
     const addTodo = (project, title, description, dueDate, priority) => {
-        if ((!project && project !== 0) || !title || !dueDate || !date.checkDate(dueDate)) {
+        if (!title || !dueDate || !date.checkDate(dueDate)) {
             return false;
         } else {
             const todo = new Todo(projects[project], title, description, dueDate, priority);
@@ -28,15 +28,9 @@ function Controller() {
     };
 
     const cleanProject = (id) => {
-        if (!id && id !== 0) {
-            return false;
-        } else {
-            list.removeProject(id);
-            update.projects(projects);
-        }
+        list.removeProject(id);
+        update.projects(projects);
     }
-
-    const cleanTodo = 0;
 
     return { projects, addProject, addTodo, cleanProject, cleanTodo };
 }
