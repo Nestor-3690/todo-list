@@ -12,6 +12,15 @@ body {
 
 header {
     grid-area: 1 / 1 / 2 / 3;
+    padding: 2rem;
+    display: grid;
+    height: 10vh;
+    background-color: #a5f3fc;
+    place-content: center start;
+}
+
+.title {
+    font-size: 3rem;
 }
 
 aside {
