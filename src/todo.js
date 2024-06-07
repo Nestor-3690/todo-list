@@ -8,12 +8,4 @@ export class Todo {
         this.isDone = false;
         this.printMoreInfos = false;
     }
-
-    changeDone() {
-        this.isDone = true ? !this.isDone : this.isDone;
-    }
-
-    changePrint() {
-        this.printMoreInfos = true ? !this.printMoreInfos : this.printMoreInfos;
-    }
 }
