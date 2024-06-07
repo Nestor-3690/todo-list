@@ -20,7 +20,6 @@ export default function(projects) {
                 create(todo.description, "description", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate", todoUI);
                 create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
-                create(todo.isDone, "isDone", todoUI);
                 const button = document.createElement("button");
                 button.classList.add("remove-todo");
                 todoUI.appendChild(button);
@@ -30,7 +29,6 @@ export default function(projects) {
                 create(todo.title, "todo-title", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate", todoUI);
                 create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
-                create(todo.isDone, "isDone", todoUI);
                 const button = document.createElement("button");
                 button.classList.add("remove-todo");
                 todoUI.appendChild(button);
