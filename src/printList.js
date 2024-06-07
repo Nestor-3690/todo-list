@@ -7,19 +7,37 @@ export default function(projects) {
     for (const project of projects) {
         const projectUI = document.createElement("div");
         projectUI.classList.add("project");
-        projectUI.textContent = project.title;
+        const projectTitle = document.createElement("div");
+        projectTitle.classList.add("project-title")
+        projectTitle.textContent = project.title;
+        projectUI.appendChild(projectTitle);
+        const projectTodos  = document.createElement("div");
+        projectTodos.classList.add("todos-container");
         for (const todo of project.todos) {
             if (todo.printMoreInfos) {
-                create(todo.title, "title", projectUI);
-                create(todo.description, "description", projectUI);
-                create(date.distanceToNow(todo.dueDate), "dueDate", projectUI);
-                create(todo.isDone, "isDone", projectUI);
+                const todoUI = document.createElement("div");
+                create(todo.title, "title", todoUI);
+                create(todo.description, "description", todoUI);
+                create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
+                create(todo.isDone, "isDone", todoUI);
+                const button = document.createElement("button");
+                button.classList.add("remove-todo");
+                todoUI.appendChild(button);
+                projectTodos.appendChild(todoUI);
             } else {
-                create(todo.title, "title", projectUI);
-                create(date.distanceToNow(todo.dueDate), "dueDate", projectUI);
-                create(todo.isDone, "isDone", projectUI);
+                const todoUI = document.createElement("div");
+                create(todo.title, "title", todoUI);
+                create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
+                create(todo.isDone, "isDone", todoUI);
+                const button = document.createElement("button");
+                button.classList.add("remove-todo");
+                todoUI.appendChild(button);
+                projectTodos.appendChild(todoUI);
             }
         }
+        const button = document.createElement("button");
+        button.classList.add("remove-project");
+        projectUI.appendChild(button);
         container.appendChild(projectUI);
     }
 }
