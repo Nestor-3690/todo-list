@@ -26,7 +26,7 @@ export default function(projects) {
                 projectTodos.appendChild(todoUI);
             } else {
                 const todoUI = document.createElement("div");
-                create(todo.title, "title", todoUI);
+                create(todo.title, "todo-title", todoUI);
                 create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
                 create(todo.isDone, "isDone", todoUI);
                 const button = document.createElement("button");
@@ -35,6 +35,7 @@ export default function(projects) {
                 projectTodos.appendChild(todoUI);
             }
         }
+        projectUI.appendChild(projectTodos);
         const button = document.createElement("button");
         button.classList.add("remove-project");
         projectUI.appendChild(button);
