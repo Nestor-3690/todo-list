@@ -1,9 +1,13 @@
-import { isDate, isFuture } from "date-fns";
+import { isDate, isFuture, formatDistanceToNowStrict, format } from "date-fns";
 
 function Date() {
     const checkDate = (date) => isDate(date) && isFuture(date);
 
-    return { checkDate };
+    const distanceToNow = (date) =>  formatDistanceToNowStrict(date);
+
+    const formatDate = (date) => format(date, 'MM/dd hh:mm');
+
+    return { checkDate, distanceToNow, formatDate };
 }
 
 export { Date };
