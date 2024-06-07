@@ -1,15 +1,25 @@
 import { Date } from "./date";
+import create from "./domTodo";
 
 export default function(projects) {
+    const container = document.querySelector(".main-container");
     const date = Date();
     for (const project of projects) {
-        console.log(project.title);
+        const projectUI = document.createElement("div");
+        projectUI.classList.add("project");
+        projectUI.textContent = project.title;
         for (const todo of project.todos) {
             if (todo.printMoreInfos) {
-                console.log(todo.title, todo.description, date.distanceToNow(todo.dueDate));
+                create(todo.title, "title", projectUI);
+                create(todo.description, "description", projectUI);
+                create(date.distanceToNow(todo.dueDate), "dueDate", projectUI);
+                create(todo.isDone, "isDone", projectUI);
             } else {
-                console.log(todo.title, date.formatDate(todo.dueDate), date.distanceToNow(todo.dueDate), todo.isDone);
+                create(todo.title, "title", projectUI);
+                create(date.distanceToNow(todo.dueDate), "dueDate", projectUI);
+                create(todo.isDone, "isDone", projectUI);
             }
         }
+        container.appendChild(projectUI);
     }
 }
