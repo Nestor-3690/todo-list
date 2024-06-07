@@ -1,5 +1,8 @@
+import { Storage } from "./storage";
+
 const list = (function List() {
-    const projects = [];
+    const storage = Storage();
+    const projects = storage.checkList();
 
     const getProjects = () => projects;
 
