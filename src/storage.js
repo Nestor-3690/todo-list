@@ -9,7 +9,11 @@ function Storage() {
         }
     }
 
-    return { checkList };
+    const updateList = (list) => {
+        localStorage.setItem("list", JSON.stringify(list));
+    }
+
+    return { checkList, updateList };
 }
 
 export { Storage };
