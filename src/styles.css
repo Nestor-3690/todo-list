@@ -163,7 +163,11 @@ main {
 }
 
 #check-todo::after {
+    position: relative;
     content: "✓";
+    font-size: 2rem;
+    left: -0.35rem;
+    top: -0.25rem;
 }
 
 .todo-title {
