@@ -25,7 +25,6 @@ export default function(projects) {
                 create(todo.title, "todo-title", todoUI);
                 create(todo.description, "description", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
-                create(date.distanceToNow(todo.dueDate), "dueDate2", todoUI);
                 newButton("more-infos", todoUI, "more-infos");
                 newButton("remove-todo", todoUI);
                 projectTodos.appendChild(todoUI);
@@ -36,7 +35,6 @@ export default function(projects) {
                 newButton("check-todo", todoUI);
                 create(todo.title, "todo-title", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
-                create(date.distanceToNow(todo.dueDate), "dueDate2", todoUI);
                 newButton("more-infos", todoUI);
                 newButton("remove-todo", todoUI);
                 projectTodos.appendChild(todoUI);
