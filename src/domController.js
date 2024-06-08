@@ -39,7 +39,6 @@ export function domController() {
             }
         });
         submitTodoBtn.addEventListener("click", (event) => {
-            console.log("I get clicked");
             event.preventDefault();
             list.addTodo(todoproject.value, todotitle.value, tododesc.value, new Date(duedate.value), priority.value)
             printList(list.projects);
