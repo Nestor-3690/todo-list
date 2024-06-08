@@ -18,6 +18,7 @@ export default function(projects) {
             if (todo.printMoreInfos) {
                 const todoUI = document.createElement("div");
                 todoUI.classList.add("todo");
+                newButton("check-todo", todoUI);
                 create(todo.title, "title", todoUI);
                 create(todo.description, "description", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate", todoUI);
@@ -27,6 +28,7 @@ export default function(projects) {
             } else {
                 const todoUI = document.createElement("div");
                 todoUI.classList.add("todo");
+                newButton("check-todo", todoUI);
                 create(todo.title, "todo-title", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate", todoUI);
                 create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
