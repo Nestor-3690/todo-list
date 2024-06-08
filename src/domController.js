@@ -5,12 +5,12 @@ import printAside from "./printAside";
 export function domController() {
     const list = Controller();
 
-    const setList = () => {
+    const setPage = () => {
         printList(list.projects);
         printAside(list.projects);
     }
 
-    setList();
+    setPage();
 
-    return { setList };
+    return { setPage };
 };
