@@ -1,3 +1,6 @@
+import printList from "./printList";
+import printAside from "./printAside";
+
 export function setDialogs(list) {
     const addProjectBtn = document.querySelector("#ap-button");
     const projectDialog = document.querySelector("#project-dialog")
