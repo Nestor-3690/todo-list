@@ -13,6 +13,7 @@ export function domController() {
         setDialogs(list);
         const buttons = setButtons();
         buttons.moreInfos(list);
+        buttons.check(list);
     }
 
     setPage();

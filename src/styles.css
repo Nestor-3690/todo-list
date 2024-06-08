@@ -162,6 +162,10 @@ main {
     border-radius: 10%;
 }
 
+#check-todo::after {
+    content: "✓";
+}
+
 .todo-title {
     position: relative;
     grid-area: 1 / 2 / 2 / 3;

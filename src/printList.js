@@ -21,7 +21,11 @@ export default function(projects) {
                 const todoUI = document.createElement("div");
                 todoUI.classList.add("todo");
                 todoUI.setAttribute("id", `${todo.id}`);
-                newButton("check-todo", todoUI);
+                if (todo.isDone === true) {
+                    newButton("check-todo", todoUI, "check-todo");
+                } else {
+                    newButton("check-todo", todoUI);
+                };
                 create(todo.title, "todo-title", todoUI);
                 create(todo.description, "description", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
@@ -32,7 +36,11 @@ export default function(projects) {
                 const todoUI = document.createElement("div");
                 todoUI.classList.add("todo");
                 todoUI.setAttribute("id", `${todo.id}`);
-                newButton("check-todo", todoUI);
+                if (todo.isDone === true) {
+                    newButton("check-todo", todoUI, "check-todo");
+                } else {
+                    newButton("check-todo", todoUI);
+                };
                 create(todo.title, "todo-title", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
                 newButton("more-infos", todoUI);
