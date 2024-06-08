@@ -1,5 +1,6 @@
 import { Date } from "./date";
 import create from "./domTodo";
+import newButton from "./button";
 
 export default function(projects) {
     const container = document.querySelector(".main-container");
@@ -21,9 +22,7 @@ export default function(projects) {
                 create(todo.description, "description", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate", todoUI);
                 create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
-                const button = document.createElement("button");
-                button.classList.add("remove-todo");
-                todoUI.appendChild(button);
+                newButton("remove-todo", todoUI);
                 projectTodos.appendChild(todoUI);
             } else {
                 const todoUI = document.createElement("div");
@@ -31,9 +30,7 @@ export default function(projects) {
                 create(todo.title, "todo-title", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate", todoUI);
                 create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
-                const button = document.createElement("button");
-                button.classList.add("remove-todo");
-                todoUI.appendChild(button);
+                newButton("remove-todo", todoUI);
                 projectTodos.appendChild(todoUI);
             }
         }
