@@ -27,12 +27,12 @@ export function domController() {
             printList(list.projects);
             printAside(list.projects);
         })
-        addTodoBtn.addEventListener("click", () => { 
-            todoDialog.showModal()
+        addTodoBtn.addEventListener("click", () => {
+            todoDialog.showModal();
             const selectProject = document.querySelector("#todoproject");
+            selectProject.textContent = '';
             for (const project of list.projects) {
                 const option = document.createElement("option");
-                option.textContent = '';
                 option.value = `${project.id}`;
                 option.textContent = `${project.title}`;
                 selectProject.appendChild(option);
