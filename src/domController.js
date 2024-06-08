@@ -2,6 +2,7 @@ import { Controller } from "./listController";
 import printList from "./printList";
 import printAside from "./printAside";
 import { setDialogs } from "./setDialogs";
+import { setButtons } from "./setButtons";
 
 export function domController() {
     const list = Controller();
@@ -10,6 +11,8 @@ export function domController() {
         printList(list.projects);
         printAside(list.projects);
         setDialogs(list);
+        const buttons = setButtons();
+        buttons.moreInfos(list);
     }
 
     setPage();
