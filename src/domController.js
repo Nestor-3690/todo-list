@@ -16,12 +16,29 @@ export function domController() {
         const projectDialog = document.querySelector("#project-dialog")
         const submitProjectBtn = document.querySelector("#submit-project");
 
+        const addTodoBtn = document.querySelector("#at-button");
+        const todoDialog = document.querySelector("#todo-dialog");
+        const submitTodoBtn = document.querySelector("#submit-todo");
+
         addProjectBtn.addEventListener("click", () => projectDialog.showModal());
         submitProjectBtn.addEventListener("click", (event) => {
             event.preventDefault();
             list.addProject(prTitle.value);
             printList(list.projects);
             printAside(list.projects);
+        })
+        addTodoBtn.addEventListener("click", () => { 
+            todoDialog.showModal()
+            const selectProject = document.querySelector("#todoproject");
+            for (const project of list.projects) {
+                const option = document.createElement("option");
+                option.value = `${project.id}`;
+                option.textContent = `${project.title}`;
+                selectProject.appendChild(option);
+            }
+        });
+        submitTodoBtn.addEventListener("click", (event) => {
+            event.preventDefault();
         })
     }
 
