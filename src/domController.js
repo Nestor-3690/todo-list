@@ -32,6 +32,7 @@ export function domController() {
             const selectProject = document.querySelector("#todoproject");
             for (const project of list.projects) {
                 const option = document.createElement("option");
+                option.textContent = '';
                 option.value = `${project.id}`;
                 option.textContent = `${project.title}`;
                 selectProject.appendChild(option);
