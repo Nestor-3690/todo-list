@@ -16,6 +16,7 @@ export default function(projects) {
         for (const todo of project.todos) {
             if (todo.printMoreInfos) {
                 const todoUI = document.createElement("div");
+                todoUI.classList.add("todo");
                 create(todo.title, "title", todoUI);
                 create(todo.description, "description", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate", todoUI);
@@ -26,6 +27,7 @@ export default function(projects) {
                 projectTodos.appendChild(todoUI);
             } else {
                 const todoUI = document.createElement("div");
+                todoUI.classList.add("todo");
                 create(todo.title, "todo-title", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate", todoUI);
                 create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
