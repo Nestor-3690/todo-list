@@ -9,6 +9,7 @@ export default function(projects) {
     for (const project of projects) {
         const projectUI = document.createElement("div");
         projectUI.classList.add("project");
+        projectUI.setAttribute("id", `${project.id}`);
         const projectTitle = document.createElement("div");
         projectTitle.classList.add("project-title")
         projectTitle.textContent = project.title;
@@ -19,17 +20,19 @@ export default function(projects) {
             if (todo.printMoreInfos) {
                 const todoUI = document.createElement("div");
                 todoUI.classList.add("todo");
+                todoUI.setAttribute("id", `${todo.id}`);
                 newButton("check-todo", todoUI);
-                create(todo.title, "title", todoUI);
+                create(todo.title, "todo-title", todoUI);
                 create(todo.description, "description", todoUI);
-                create(date.formatDate(todo.dueDate), "dueDate", todoUI);
-                create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
-                newButton("more-infos", todoUI)
+                create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
+                create(date.distanceToNow(todo.dueDate), "dueDate2", todoUI);
+                newButton("more-infos", todoUI, "more-infos");
                 newButton("remove-todo", todoUI);
                 projectTodos.appendChild(todoUI);
             } else {
                 const todoUI = document.createElement("div");
                 todoUI.classList.add("todo");
+                todoUI.setAttribute("id", `${todo.id}`);
                 newButton("check-todo", todoUI);
                 create(todo.title, "todo-title", todoUI);
                 create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
