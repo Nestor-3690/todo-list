@@ -27,7 +27,25 @@
                 <div class="function-text">Add a Todo</div>
             </div>
             <dialog id="todo-dialog">
-                <form></form>
+                <form>
+                    <label for="todoproject">Project: </label>
+                    <select name="todoproject" id="todoproject"></select>
+                    <label for="todotitle">Title: </label>
+                    <input type="text" id="todotitle" name="todotitle">
+                    <label for="tododesc">Description: </label>
+                    <textarea name="tododesc" id="tododesc"></textarea>
+                    <label for="duedate">Due Date: </label>
+                    <input type="datetime-local" id="duedate" name="duedate">
+                    <label for="priority">Priority: </label>
+                    <select name="priority" id="priority">
+                        <option value="Critical">Critical</option>
+                        <option value="High Priority">High Priority</option>
+                        <option value="Neutral">Neutral</option>
+                        <option value="Low Priority">Low Priority</option>
+                        <option value="Unknown" selected>Unknown</option>
+                    </select>
+                    <button id="submit-todo">Submit</button>
+                </form>
             </dialog>
         </div>
         <div class="aside-projects">
