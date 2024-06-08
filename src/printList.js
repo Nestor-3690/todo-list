@@ -30,8 +30,8 @@ export default function(projects) {
                 todoUI.classList.add("todo");
                 newButton("check-todo", todoUI);
                 create(todo.title, "todo-title", todoUI);
-                create(date.formatDate(todo.dueDate), "dueDate", todoUI);
-                create(date.distanceToNow(todo.dueDate), "dueDate", todoUI);
+                create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
+                create(date.distanceToNow(todo.dueDate), "dueDate2", todoUI);
                 newButton("remove-todo", todoUI);
                 projectTodos.appendChild(todoUI);
             }
