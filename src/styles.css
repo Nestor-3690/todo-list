@@ -98,6 +98,10 @@ main {
     border: none;
 }
 
+.remove-project, .remove-todo {
+    background: none;
+}
+
 .remove-project::after, .remove-todo::after {
     content: "X";
 }
