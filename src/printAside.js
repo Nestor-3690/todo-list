@@ -2,6 +2,7 @@ import newButton from "./button";
 
 export default function(projects) {
     const aside = document.querySelector(".aside-container")
+    aside.textContent = '';
     for (const project of projects) {
         const pr = document.createElement("div");
         pr.classList.add("aside-project")

@@ -4,6 +4,7 @@ import newButton from "./button";
 
 export default function(projects) {
     const container = document.querySelector(".main-container");
+    container.textContent = '';
     const date = Date();
     for (const project of projects) {
         const projectUI = document.createElement("div");
