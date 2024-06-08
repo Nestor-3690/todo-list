@@ -14,6 +14,7 @@ export function domController() {
         const buttons = setButtons();
         buttons.moreInfos(list);
         buttons.check(list);
+        buttons.remove(list);
     }
 
     setPage();
