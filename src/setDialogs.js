@@ -1,5 +1,6 @@
 import printList from "./printList";
 import printAside from "./printAside";
+import { setButtons } from "./setButtons";
 
 export function setDialogs(list) {
     const addProjectBtn = document.querySelector("#ap-button");
@@ -16,6 +17,7 @@ export function setDialogs(list) {
         list.addProject(prTitle.value);
         printList(list.projects);
         printAside(list.projects);
+        setButtons(list);
     })
     addTodoBtn.addEventListener("click", () => {
         todoDialog.showModal();
@@ -33,5 +35,6 @@ export function setDialogs(list) {
         list.addTodo(todoproject.value, todotitle.value, tododesc.value, new Date(duedate.value), priority.value)
         printList(list.projects);
         printAside(list.projects);
+        setButtons(list);
     });
 };

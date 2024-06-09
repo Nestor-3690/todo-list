@@ -11,10 +11,7 @@ export function domController() {
         printList(list.projects);
         printAside(list.projects);
         setDialogs(list);
-        const buttons = setButtons();
-        buttons.moreInfos(list);
-        buttons.check(list);
-        buttons.remove(list);
+        setButtons(list);
     }
 
     setPage();

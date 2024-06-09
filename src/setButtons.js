@@ -3,9 +3,9 @@ import printList from "./printList";
 import printAside from "./printAside";
 import button from "./button";
 
-function setButtons() {
+function setButtons(list) {
     const controller = Controller();
-    function moreInfos(list) {
+    (function moreInfos() {
         const moreInfosBtn = document.querySelectorAll(".more-infos");
         moreInfosBtn.forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -13,13 +13,12 @@ function setButtons() {
                 const projectID = btn.parentElement.parentElement.parentElement.id;
                 controller.changeInfos(projectID, todoID);
                 printList(list.projects);
-                moreInfos(list);
-                check(list);
+                setButtons(list);
             })
         })
-    }
+    })();
 
-    function check(list) {
+    (function check() {
         const checkBtn = document.querySelectorAll(".check-todo");
         checkBtn.forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -27,13 +26,12 @@ function setButtons() {
                 const projectID = btn.parentElement.parentElement.parentElement.id;
                 controller.changeTodoStatus(projectID, todoID);
                 printList(list.projects);
-                moreInfos(list);
-                check(list);
+                setButtons(list);
             })
         })
-    }
+    })();
 
-    function remove(list) {
+    (function remove() {
         const removeBtn = document.querySelectorAll(".remove-project, .remove-todo");
         removeBtn.forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -47,14 +45,10 @@ function setButtons() {
                 }
                 printList(list.projects);
                 printAside(list.projects);
-                moreInfos(list);
-                check(list);
-                remove(list);
+                setButtons(list);
             })
         })
-    }
-
-    return { moreInfos, check, remove };
+    })();
 }
 
 export { setButtons };

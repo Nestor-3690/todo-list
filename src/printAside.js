@@ -1,5 +1,3 @@
-import newButton from "./button";
-
 export default function(projects) {
     const aside = document.querySelector(".aside-container")
     aside.textContent = '';
