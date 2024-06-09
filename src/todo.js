@@ -1,5 +1,5 @@
 export class Todo {
-        constructor(project, title, description = "No description", dueDate, priority = "unknown") {
+        constructor(project, title, description, dueDate, priority) {
         this.id = project.todos.length,
         this.title = title,
         this.description = description,

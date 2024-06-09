@@ -25,6 +25,9 @@ function Controller() {
         if (!title || !dueDate || !date.checkDate(dueDate)) {
             return false;
         } else {
+            if (description === "") {
+                description = "No description";
+            };
             const todo = new Todo(projects[project], title, description, dueDate, priority);
             list.appendTodo(todo, project);
         }
