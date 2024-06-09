@@ -55,6 +55,27 @@
     </aside>
     <main>
         <div class="main-container"></div>
+        <dialog id="change-todo-dialog">
+            <form>
+                <label for="changetodoproject">Project: </label>
+                <select name="changetodoproject" id="changetodoproject"></select>
+                <label for="changetodotitle">Title: </label>
+                <input type="text" id="changetodotitle" name="changetodotitle">
+                <label for="changetododesc">Description: </label>
+                <textarea name="changetododesc" id="changetododesc"></textarea>
+                <label for="changeduedate">Due Date: </label>
+                <input type="datetime-local" id="changeduedate" name="changeduedate">
+                <label for="changepriority">Priority: </label>
+                <select name="changepriority" id="changepriority">
+                    <option value="Critical">Critical</option>
+                    <option value="High Priority">High Priority</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Low Priority">Low Priority</option>
+                    <option value="Unknown" selected>Unknown</option>
+                </select>
+                <button id="submit-change-todo">Submit</button>
+            </form>
+        </dialog>
     </main>
 </body>
 </html>
