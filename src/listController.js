@@ -34,6 +34,22 @@ function Controller() {
         storage.updateList(projects);
     };
 
+    const changeTodo = (projectId, id, title, description, dueDate, priority) => {
+        if (!title || !dueDate || !date.checkDate(dueDate)) {
+            return false;
+        } else {
+            if (description === "") {
+                description = "No description";
+            };
+            const todo = projects[projectId].todos[id];
+            todo.title = title;
+            todo.description = description;
+            todo.dueDate = dueDate;
+            todo.priority = priority;
+        }
+        storage.updateList(projects);
+    }
+
     const cleanProject = (id) => {
         list.removeProject(id);
         update.projects(projects);
@@ -64,7 +80,7 @@ function Controller() {
         storage.updateList(projects);
     }
 
-    return { projects, addProject, addTodo, cleanProject, cleanTodo, changeTodoStatus, changeInfos };
+    return { projects, addProject, addTodo, cleanProject, cleanTodo, changeTodoStatus, changeInfos, changeTodo };
 }
 
 export { Controller };
