@@ -17,38 +17,25 @@ export default function(projects) {
         const projectTodos  = document.createElement("div");
         projectTodos.classList.add("todos-container");
         for (const todo of project.todos) {
-            if (todo.printMoreInfos) {
-                const todoUI = document.createElement("div");
-                todoUI.classList.add("todo");
-                todoUI.setAttribute("id", `${todo.id}`);
-                if (todo.isDone === true) {
-                    newButton("check-todo", todoUI, "check-todo");
-                } else {
-                    newButton("check-todo", todoUI);
-                };
-                create(todo.title, "todo-title", todoUI);
-                create(todo.description, "description", todoUI);
-                create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
-                newButton("more-infos", todoUI, "more-infos");
-                newButton("change-todo", todoUI);
-                newButton("remove-todo", todoUI);
-                projectTodos.appendChild(todoUI);
+            const todoUI = document.createElement("div");
+            todoUI.classList.add("todo");
+            todoUI.setAttribute("id", `${todo.id}`);
+            if (todo.isDone === true) {
+                newButton("check-todo", todoUI, "check-todo");
             } else {
-                const todoUI = document.createElement("div");
-                todoUI.classList.add("todo");
-                todoUI.setAttribute("id", `${todo.id}`);
-                if (todo.isDone === true) {
-                    newButton("check-todo", todoUI, "check-todo");
-                } else {
-                    newButton("check-todo", todoUI);
-                };
-                create(todo.title, "todo-title", todoUI);
-                create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
+                newButton("check-todo", todoUI);
+            };
+            create(todo.title, "todo-title", todoUI);
+            create(date.formatDate(todo.dueDate), "dueDate1", todoUI);
+            if (todo.printMoreInfos) {
+                create(todo.description, "description", todoUI);
+                newButton("more-infos", todoUI, "more-infos");
+            } else {
                 newButton("more-infos", todoUI);
-                newButton("change-todo", todoUI);
-                newButton("remove-todo", todoUI);
-                projectTodos.appendChild(todoUI);
             }
+            newButton("change-todo", todoUI);
+            newButton("remove-todo", todoUI);
+            projectTodos.appendChild(todoUI);
         }
         projectUI.appendChild(projectTodos);
         const button = document.createElement("button");
