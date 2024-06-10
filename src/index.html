@@ -16,7 +16,8 @@
                 <div class="function-text">Add a Project</div>
             </div>
             <dialog id="project-dialog">
-                <form>
+                <form id="project-form">
+                    <div class="form-title">New Project</div>
                     <label for="prTitle">Project Title: </label>
                     <input type="text" id="prTitle" name="prTitle">
                     <button id="submit-project">Submit</button>
@@ -27,7 +28,8 @@
                 <div class="function-text">Add a Todo</div>
             </div>
             <dialog id="todo-dialog">
-                <form>
+                <form id="todo-form">
+                    <div class="form-title">New Todo</div>
                     <label for="todoproject">Project: </label>
                     <select name="todoproject" id="todoproject"></select>
                     <label for="todotitle">Title: </label>
@@ -56,7 +58,8 @@
     <main>
         <div class="main-container"></div>
         <dialog id="change-todo-dialog">
-            <form>
+            <form id="change-todo-form">
+                <div class="form-title">Change Todo</div>
                 <label for="changetodoproject">Project: </label>
                 <select name="changetodoproject" id="changetodoproject"></select>
                 <label for="changetodotitle">Title: </label>
