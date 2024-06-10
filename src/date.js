@@ -5,7 +5,7 @@ function Date() {
 
     const distanceToNow = (date) =>  formatDistanceToNowStrict(date);
 
-    const formatDate = (date) => format(date, 'MM/dd hh:mm');
+    const formatDate = (date) => format(date, 'MM/dd/yyyy HH:mm');
 
     return { checkDate, distanceToNow, formatDate };
 }
