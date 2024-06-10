@@ -19,6 +19,15 @@ export default function(projects) {
         for (const todo of project.todos) {
             const todoUI = document.createElement("div");
             todoUI.classList.add("todo");
+            if (todo.priority === "Critical") {
+                todoUI.classList.add("critical");
+            } else if (todo.priority === "High Priority") {
+                todoUI.classList.add("high-priority");
+            } else if (todo.priority === "Neutral") {
+                todoUI.classList.add("neutral");
+            } else if (todo.priority === "Low Priority") {
+                todoUI.classList.add("low-priority");
+            }
             todoUI.setAttribute("id", `${todo.id}`);
             if (todo.isDone === true) {
                 newButton("check-todo", todoUI, "check-todo");
