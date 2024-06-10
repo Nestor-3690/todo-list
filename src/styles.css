@@ -150,8 +150,6 @@ main {
 
 .remove-project {
     grid-area: 1 / 2 / 2 / 3;
-    width: 2.5rem;
-    height: 2.5rem;
     justify-self: start;
 }
 
@@ -169,6 +167,7 @@ main {
 
 .remove-project::after, .remove-todo::after {
     content: "✘";
+    font-size: 1.5rem;
     color: #dc2626;
 }
 
@@ -182,7 +181,7 @@ main {
 .todo {
     padding: 1rem;
     display: grid;
-    grid-template-columns:  0.25fr 1fr auto 0.25fr 0.25fr 0.25fr;
+    grid-template-columns:  1fr 4fr auto 0.5fr 0.5fr 0.5fr;
     gap: 0.5rem 2rem;
     align-items: center;
 }
@@ -237,11 +236,11 @@ main {
 }
 
 .more-infos {
+    position: relative;
     grid-area: 1 / 4 / 2 / 5;
-    height: 2.2rem;
-    width: 2.2rem;
-    font-size: 1.5rem;
-    justify-self: center;
+    font-size: 2rem;
+    justify-self: start;
+    top: -2px;
 }
 
 .more-infos::after {
@@ -250,12 +249,13 @@ main {
 
 #more-infos::after {
     content: "⌃";
-    font-size: 1.1rem;
+    font-size: 1.6rem;
 }
 
 .change-todo {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     grid-area: 1 / 5 / 2 / 6;
+    justify-self: start;
 }
 
 .change-todo::after {
