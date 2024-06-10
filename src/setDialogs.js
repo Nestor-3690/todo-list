@@ -43,8 +43,8 @@ export function setDialogs(list) {
     const changeTodoDialog = document.querySelector("#change-todo-dialog");
     const submitUpdateBtn = document.querySelector("#submit-change-todo");
 
-    let todoID = "";
-    let projectID = "";
+    let todoID = 0 ;
+    let projectID = 0;
 
     changeTodoBtn.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -72,10 +72,13 @@ export function setDialogs(list) {
     })
     submitUpdateBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        list.changeTodo(projectID, todoID, changetodotitle.value, changetododesc.value, new Date(changeduedate.value), priority.value);
+        if (projectID) {
+            list.changeTodo(projectID, changetodoproject.value, todoID, changetodotitle.value, changetododesc.value, new Date(changeduedate.value), priority.value);
+        }
         printList(list.projects);
         printAside(list.projects);
         setButtons(list);
         setDialogs(list);
+        changeTodoDialog.close();
     });
 };
