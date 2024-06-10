@@ -83,7 +83,7 @@ function setButtons(list) {
         })
         submitUpdateBtn.addEventListener("click", (event) => {
             event.preventDefault();
-            list.changeTodo(projectID, changetodoproject.value, todoID, changetodotitle.value, changetododesc.value, new Date(changeduedate.value), priority.value);
+            list.changeTodo(projectID, changetodoproject.value, todoID, changetodotitle.value, changetododesc.value, new Date(changeduedate.value), changepriority.value);
             printList(list.projects);
             printAside(list.projects);
             setButtons(list);
