@@ -16,6 +16,8 @@ export function setDialogs(list) {
     submitProjectBtn.addEventListener("click", (event) => {
         event.preventDefault();
         list.addProject(prTitle.value);
+        prTitle.value = '';
+        projectDialog.close();
         printList(list.projects);
         printAside(list.projects);
         setButtons(list);
@@ -34,6 +36,7 @@ export function setDialogs(list) {
     submitTodoBtn.addEventListener("click", (event) => {
         event.preventDefault();
         list.addTodo(todoproject.value, todotitle.value, tododesc.value, new Date(duedate.value), priority.value);
+        todotitle.value = tododesc.value = '';
         todoDialog.close();
         printList(list.projects);
         printAside(list.projects);
