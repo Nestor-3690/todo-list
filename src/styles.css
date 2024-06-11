@@ -119,8 +119,16 @@ aside {
     margin-left: 1rem;
 }
 
-.aside-project-title:hover, .aside-todo:hover {
-    text-decoration: underline;
+.close-date {
+    color: #ef4444;
+}
+
+.passed-date {
+    color: #a3a3a3;
+}
+
+.done {
+    text-decoration: line-through;
 }
 
 main {

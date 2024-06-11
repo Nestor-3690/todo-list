@@ -25,6 +25,7 @@ function setButtons(list) {
                 const projectID = btn.parentElement.parentElement.parentElement.id;
                 controller.changeTodoStatus(projectID, todoID);
                 printList(list.projects);
+                printAside(list.projects);
                 setButtons(list);
             })
         })
