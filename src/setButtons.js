@@ -69,6 +69,9 @@ function setButtons(list) {
                     const option = document.createElement("option");
                     option.value = `${project.id}`;
                     option.textContent = `${project.title}`;
+                    if (project.title === list.projects[projectID].title) {
+                        option.setAttribute("selected", "selected");
+                    }
                     changeProject.appendChild(option);
                 }
                 const changeTitle = document.querySelector("#changetodotitle");
