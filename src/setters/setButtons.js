@@ -1,6 +1,6 @@
-import { Controller } from "./listController";
-import printList from "./printList";
-import printAside from "./printAside";
+import { Controller } from "../list/listController";
+import printList from "../printers/printList";
+import printAside from "../printers/printAside";
 
 function setButtons(list) {
     const controller = Controller();

@@ -1,4 +1,4 @@
-import { Date } from "./date";
+import { Date } from "../date";
 
 export default function(projects) {
     const date = Date();

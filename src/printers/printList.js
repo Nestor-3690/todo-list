@@ -1,6 +1,6 @@
-import { Date } from "./date";
-import create from "./domTodoPart";
-import newButton from "./button";
+import { Date } from "../date";
+import create from "../dom/domTodoPart";
+import newButton from "../dom/button";
 
 export default function(projects) {
     const container = document.querySelector(".main-container");

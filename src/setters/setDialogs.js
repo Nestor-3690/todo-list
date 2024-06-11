@@ -1,5 +1,5 @@
-import printList from "./printList";
-import printAside from "./printAside";
+import printList from "../printers/printList";
+import printAside from "../printers/printAside";
 import { setButtons } from "./setButtons";
 
 export function setDialogs(list) {

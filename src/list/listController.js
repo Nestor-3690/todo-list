@@ -1,8 +1,8 @@
 import { list } from "./list";
-import { Project } from "./project";
-import { Todo } from "./todo";
+import { Project } from "../classes/project";
+import { Todo } from "../classes/todo";
 import { UpdateID } from "./updateID";
-import { Date } from "./date";
+import { Date } from "../date";
 import { Storage } from "./storage";
 
 function Controller() {

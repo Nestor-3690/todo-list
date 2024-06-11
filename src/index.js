@@ -1,6 +1,4 @@
-import { domController } from "./domController";
+import { domController } from "./dom/domController";
 import './styles.css';
 
-/* localStorage.clear(); */
-
-const initialize = domController();
+domController();
