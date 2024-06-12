@@ -55,8 +55,8 @@ function setButtons(list) {
         const changeTodoDialog = document.querySelector("#change-todo-dialog");
         const submitUpdateBtn = document.querySelector("#submit-change-todo");
     
-        let todoID = 0 ;
-        let projectID = 0;
+        let todoID = -1 ;
+        let projectID = -1;
     
         changeTodoBtn.forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -87,7 +87,8 @@ function setButtons(list) {
         })
         submitUpdateBtn.addEventListener("click", (event) => {
             event.preventDefault();
-            list.changeTodo(projectID, changetodoproject.value, todoID, changetodotitle.value, changetododesc.value, new Date(changeduedate.value), changepriority.value);
+            list.changeTodo(projectID, todoID, changetodotitle.value, changetododesc.value, new Date(changeduedate.value), changepriority.value);
+            projectID = todoID = -1;
             printList(list.projects);
             printAside(list.projects);
             setButtons(list);

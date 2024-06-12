@@ -34,27 +34,18 @@ function Controller() {
         storage.updateList(projects);
     };
 
-    const changeTodo = (oldProject, projectId, id, title, description, dueDate, priority) => {
-        if (!title || !dueDate || !date.checkDate(dueDate)) {
+    const changeTodo = (projectId, id, title, description, dueDate, priority) => {
+        if (!title || !dueDate || !date.checkDate(dueDate) || projectId < 0 || id < 0) {
             return false;
         } else {
             if (description === "") {
                 description = "No description";
             };
-            const todo = projects[oldProject].todos[id];
-            if (todo) {
-                if (oldProject === projectId) {
-                    todo.id = projects[projectId].todos.length - 1;
-                } else {
-                    todo.id = projects[projectId].todos.length;
-                }
-                todo.title = title;
-                todo.description = description;
-                todo.dueDate = dueDate;
-                todo.priority = priority;
-                cleanTodo(oldProject, id);
-                list.appendTodo(todo, projectId);
-            }
+            const todo = projects[projectId].todos[id];
+            todo.title = title;
+            todo.description = description;
+            todo.dueDate = dueDate;
+            todo.priority = priority;
         }
         storage.updateList(projects);
     }
